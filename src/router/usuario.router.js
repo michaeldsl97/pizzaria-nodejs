@@ -11,7 +11,7 @@ router.get('/findAll', usuarioController.findAllUsersController);
 // Criar ID, ENDEREÇOS, PRODUTOS FAVORITOS
 router.post('/create', usuarioController.createUserController);
 router.post('/addAddres/:id', usuarioController.addUserAddressController);
-router.post('/addFavProduct/:id', usuarioController.addUserFavProduct);
+router.post('/addFavProduct/:id', usuarioController.addUserFavProductController);
 
 // rotas PUT
 // Atualizar
@@ -21,6 +21,6 @@ router.put('/update/:id', usuarioController.updateUserController);
 // Deletar ID, ENDEREÇOS, PRODUTOS FAVORITOS
 router.delete('/remove/:id', usuarioController.removeUserController);
 router.delete('/removeAddress', usuarioController.removeUserAddressController);
-router.delete('/removeFavProduct', usuarioController.removeUserFavProduct);
+router.delete('/removeFavProduct', usuarioController.removeUserFavProductController);
 
-module.router = router;
+module.exports = router;
