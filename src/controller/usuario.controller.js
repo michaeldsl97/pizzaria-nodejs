@@ -90,7 +90,7 @@ const removeUserAddressController = async (req, res) => {
 
 
 // Add Fav Product
-const addUserFavProduct = async (req, res) => {
+const addUserFavProductController = async (req, res) => {
     try{
 
 
@@ -103,7 +103,7 @@ const addUserFavProduct = async (req, res) => {
 
 
 // Remove Fav Produtc
-const removeUserFavProduct = async (req, res) => {
+const removeUserFavProductController = async (req, res) => {
     try{
 
 
@@ -123,6 +123,6 @@ module.exports = {
     removeUserController,
     addUserAddressController,
     removeUserAddressController,
-    addUserFavProduct,
-    removeUserFavProduct,
+    addUserFavProductController,
+    removeUserFavProductController,
 }
