@@ -17,7 +17,7 @@ const updateUserService = (id, body) => {
 };
 
 const removeUserService = (id) => {
-    return Usuario.findByIdAndRemove(id);
+    return Usuario.findByIdAndDelete(id); //remove não funcionou
 };
 
 const addUserAddressService = (id, endereco) => {
@@ -48,3 +48,6 @@ module.exports = {
     addUserFavProductService,
     removeUserFavProductService,
 }
+
+
+//findByIdAndRemove
