@@ -1,3 +1,4 @@
+// Find
 const findUserByIdController = async (req, res) => {
     try{
 
@@ -9,6 +10,8 @@ const findUserByIdController = async (req, res) => {
     }
 };
 
+
+//finAll
 const findAllUsersController = async (req, res) => {
     try{
 
@@ -20,6 +23,8 @@ const findAllUsersController = async (req, res) => {
     }
 };
 
+
+//Create
 const createUserController = async (req, res) => {
     try{
 
@@ -31,6 +36,8 @@ const createUserController = async (req, res) => {
     }
 };
 
+
+//Update
 const updateUserController = async (req, res) => {
     try{
 
@@ -43,6 +50,7 @@ const updateUserController = async (req, res) => {
 };
 
 
+//Remove
 const removeUserController = async (req, res) => {
     try{
 
@@ -54,6 +62,8 @@ const removeUserController = async (req, res) => {
     }
 };
 
+
+// Add Address
 const addUserAddressController = async (req, res) => {
     try{
 
@@ -65,6 +75,8 @@ const addUserAddressController = async (req, res) => {
     }
 };
 
+
+// Remove Address
 const removeUserAddressController = async (req, res) => {
     try{
 
@@ -77,6 +89,7 @@ const removeUserAddressController = async (req, res) => {
 };
 
 
+// Add Fav Product
 const addUserFavProduct = async (req, res) => {
     try{
 
@@ -88,6 +101,8 @@ const addUserFavProduct = async (req, res) => {
     }
 };
 
+
+// Remove Fav Produtc
 const removeUserFavProduct = async (req, res) => {
     try{
 
