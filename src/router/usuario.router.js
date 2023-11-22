@@ -4,7 +4,7 @@ const usuarioController = require("../controller/usuario.controller");
 
 // rotas GET
 // Pesquisar ID
-router.get('/findById:id', usuarioController.findUserByIdController);
+router.get('/findById/:id', usuarioController.findUserByIdController);
 router.get('/findAll', usuarioController.findAllUsersController);
 
 // rotas POST
@@ -24,3 +24,4 @@ router.delete('/removeAddress', usuarioController.removeUserAddressController);
 router.delete('/removeFavProduct', usuarioController.removeUserFavProductController);
 
 module.exports = router;
+

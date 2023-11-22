@@ -16,7 +16,7 @@ app.use("/usuario", usuario); //Chamando as rotas do usuário
 
 app.get("/", (req,res) => {
     res.send({
-        messege: "Bem vindo a melhor pizzaria da região"
+        message: "Bem vindo a melhor pizzaria da região"
     });
 })
 
