@@ -7,7 +7,7 @@ const findUserByIdController = async (req, res) => {
         const user = await userService.findUserByIdService(req.params.id);
 
         if (!user) {
-            return res.status(404).send({ message: "Usuario não encontrado, tente novamente" });
+            return res.status(404).send({ message: `Usuario não encontrado, tente novamente` });
         }
 
         return res.status(200).send(user);
@@ -15,7 +15,7 @@ const findUserByIdController = async (req, res) => {
     } catch (err) {
         if (err.kind == "ObjectId") {
             //console.log(err.kind == "ObjectId");
-            return res.status(400).send({ message: "ID informado, esta incorreto, tente novamente!" });
+            return res.status(400).send({ message: `ID informado, esta incorreto, tente novamente!` });
         }
 
         console.log(`erro: ${err.message}`);
@@ -98,8 +98,15 @@ const removeUserController = async (req, res) => {
 // Add Address
 const addUserAddressController = async (req, res) => {
     try {
+        req.body.createdAt = new Date();
+        const endereco = await userService.addUserAddressService(req.params.id, req.body);
 
-
+        // USANDO O "!" POIS A FUNÇÃO ESTAVA FUNCIONANDO AO CONTRÁRIO 
+        if(!endereco.ok == 1){
+            res.status(201).send({ message: `Endereço adicionado com sucesso!`});
+        }else{
+            res.status(400).send({ message: `Algo deu errado com o endereço, tente novamente`});
+        }
 
     } catch (err) {
         console.log(`erro: ${err.message}`);
@@ -111,8 +118,14 @@ const addUserAddressController = async (req, res) => {
 // Remove Address
 const removeUserAddressController = async (req, res) => {
     try {
+        const endereco = await userService.removeUserAddressService(req.body.id, req.body.addressId);
 
-
+        // USANDO O "!" POIS A FUNÇÃO ESTAVA FUNCIONANDO AO CONTRÁRIO 
+        if(!endereco.ok == 1){
+            res.status(200).send({ message: `Endereço removido com sucesso!`});
+        }else{
+            res.status(400).send({ message: `Endereço não foi removido, tente novamente`});
+        }
 
     } catch (err) {
         console.log(`erro: ${err.message}`);

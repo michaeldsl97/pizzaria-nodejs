@@ -10,7 +10,7 @@ router.get('/findAll', usuarioController.findAllUsersController);
 // rotas POST
 // Criar ID, ENDEREÇOS, PRODUTOS FAVORITOS
 router.post('/create', usuarioController.createUserController);
-router.post('/addAddres/:id', usuarioController.addUserAddressController);
+router.post('/addAddress/:id', usuarioController.addUserAddressController);
 router.post('/addFavProduct/:id', usuarioController.addUserFavProductController);
 
 // rotas PUT

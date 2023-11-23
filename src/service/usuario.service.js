@@ -13,7 +13,7 @@ const createUserService = (body) => {
 };
 
 const updateUserService = (id, body) => {
-    return Usuario.findByIdAndUpdate(id, body, { returnDocument: "after"});
+    return Usuario.findByIdAndUpdate(id, body, { returnDocument: "after" });
 };
 
 const removeUserService = (id) => {
@@ -21,11 +21,37 @@ const removeUserService = (id) => {
 };
 
 const addUserAddressService = (id, endereco) => {
-
+    return Usuario.findOneAndUpdate(
+        {
+            _id: id,
+        },
+        {
+            $push: {
+                enderecos: endereco,
+            }
+        },
+        {
+            rawResul: true.valueOf,
+        }
+    );
 };
 
-const removeUserAddressService = (id) => {
-
+const removeUserAddressService = (id, addressId) => {
+    return Usuario.findOneAndUpdate(
+        {
+            _id: id,
+        },
+        {
+            $pull: {
+                enderecos: {
+                    _id: addressId
+                },
+            }
+        },
+        {
+            rawResul: true.valueOf,
+        }
+    );
 };
 
 const addUserFavProductService = (id, produto) => {
